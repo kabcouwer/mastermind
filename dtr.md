@@ -1,13 +1,13 @@
-#DTR
+# DTR
 
-##Learning goals
+## Learning goals
 -teamwork + collaboration
 -figuring out projects without much of a roadmap
 - psuedocoding
 - setting structure / deciding how to split the project into sections
 - implement testing rather than running pry
 
-##What drives us
+## What drives us
 -get more comfortable manipulating different parts to code / changing code to try new things
 -want to learn more concepts
 -get more practice
@@ -15,7 +15,7 @@
 -learning hashes
 -learning from each other and getting some hot tips on whats working well and whats not
 
-##Collaboration Style
+## Collaboration Style
 -Matt
 - equal decision making
 - equal input
@@ -28,7 +28,7 @@
 - agreement
 - pair programming is best -Dragon Alligator
 
-##Communication - how do we communicate best
+## Communication - how do we communicate best
 -Kim
 - appreciate open and honest
 - slack / zoom calls
@@ -45,7 +45,7 @@
 - chickins sound good and are important
 - willingness to learn how to be better collaborators / open to critical feedback
 
-##Describe your work style
+## Describe your work style
 -Kim
 - Quiet spaces work well
 - Putting on pants not sweats
@@ -66,7 +66,7 @@
 til about 9/10
 - flexible
 
-##Strengths
+## Strengths
 -Kim
 - empathy
 - if I do something, I do it well
@@ -80,11 +80,11 @@ til about 9/10
 - go above and beyond on tasks / do good work
 - resourceful
 
-##Strengths and how they compliment each other
+## Strengths and how they compliment each other
 -do good work
 -Kims problem solving and Matts attention to detail will work well together
 
-##What's going well
+## What's going well
 -cohort is awesome and super supportive and helpful
 -cohort is outgoing
 -doing well following along with the lessons / actually doing the code along
@@ -95,13 +95,13 @@ til about 9/10
 -filling time efficiently
 
 
-##What's not going well
+## What's not going well
 -not taking enough POM breaks
 -Kim needs to do better about taking walks/moving my body
 -research mastermind beforehand and fully grasp how the game works (created problems with war and peace)
 -need to implement more preteaching because projects involve concepts we haven't learned yet
 
-##Setting Direction and making decisions as a team
+## Setting Direction and making decisions as a team
 -communication
 -setting small goals + bigger goals
 - debriefs / checkins after goals are met
@@ -109,7 +109,7 @@ til about 9/10
 -celebrating wins
 -staying positive
 
-##How will we overcome obstacles
+## How will we overcome obstacles
 -understanding the obstacle and when it arises
 - pointing it out when it happens
 - taking a step back and talking through it together
@@ -122,7 +122,7 @@ til about 9/10
 -being resourceful
 -knowing/figuring out when to reach out for help
 
-##Scheduling restraints
+## Scheduling restraints
 -Kim
 - work at brewery from 4pm - 10pm on Saturday
 - fully vaxd AND both local
@@ -131,13 +131,13 @@ til about 9/10
 - also fully vaxd and local so we could meet up irl! If we want
 - 10am to 1pm Saturday sisters birthday
 
-##feedback
+## feedback
 - if critical it will be constructive
 - both have a willingness to give and receive feedback
 - sometimes say a positive thing and say critical thing
 - both pretty chill this is gonna be great and learn a lot!
 
-##Biggest technical strengths
+## Biggest technical strengths
 -Kim
 - problem solving
 - persistence
@@ -146,7 +146,7 @@ til about 9/10
 - resourcefulness
 - persistence
 
-##Improvement in technical skills
+## Improvement in technical skills
 -Kim
 - spend some personal time going through hashes + class and objects + iteration ruby exercises
 - making time for preteaching
@@ -155,16 +155,16 @@ til about 9/10
 - figuring out a starting point for this project and piecing it together
 - practice learned concepts + new ones too
 
-##How we can help each other improve
+## How we can help each other improve
 - being each others resource is we need help this week
 - seeing how these goals for ourselves are going
 - celebrating those wins
 
-##Tools
+## Tools
 -simplecov
 -trello board?
 
-##How are we gonna solve bugs
+## How are we gonna solve bugs
 -collaborative work
 -driver/navigator
 -be resourceful
@@ -172,7 +172,7 @@ til about 9/10
 -not be afraid to change up our code to test out different ways of doing stuff
 -improve on our technical skills alongside of this project
 
-##How do you know the project is successful?
+## How do you know the project is successful?
 -grading rubric
 -print out the screen and have a running game
 -be able to quit the game
@@ -180,29 +180,29 @@ til about 9/10
 -maybe getting to those extensions
 -at the end of the day we've learned a lot and added to our technical skills
 
-##How will we celebrate our wins
+## How will we celebrate our wins
 -pointing them out
 -stepping away from the code and allowing ourselves to feel good about what I just did
 - big fan putting on a song and dancing it out
 - sometimes grab a beer or a snack or a flavored bubbly water
 -move over tasks on trello
 
-#DTR MEMO
+# DTR MEMO
 
-##Project:
+## Project:
 Mastermind
 
-##Group Member Names:
+## Group Member Names:
 Kim Abcouwer + Matt Toensing
 
-##Goals and Expectation for the project:
+## Goals and Expectation for the project:
 -Hope to have a working game with 4 elements that can print game to screen and quit as well
 -learn from each other
 -figure out collaborative workflow with coding
 -develop our technical skills
 -meeting our goals (see above)
 
-##Team Strengths and Collaboration styles:
+## Team Strengths and Collaboration styles:
 -detail oriented, good problem solvers, resourceful
 -use driver-navigator
 -team players
@@ -210,23 +210,23 @@ Kim Abcouwer + Matt Toensing
 -we have a fair amount in common
 -personalities seem to fit well together
 
-##Schedule Expectations:
+## Schedule Expectations:
 -time blocking and meeting our goals
 -Saturday is gonna cause some collaborative interference (maybe we can divide and conquer)
 -gonna work our butts off
 
-##Communication Expectations:
+## Communication Expectations:
 -giving and receiving feedback
 -openness and honesty
 -talk in the morning before class for checkins to plan for the day
 -meet up after class and driver-navigator
 -before ending the day talk about what went well and what didn't and if anything comes up / we want to make changes on our process
 
-##POM Schedule:
+## POM Schedule:
 -45 minutes on
 -10 minutes off
 
-##Day 1 Agenda:
+## Day 1 Agenda:
 -around 5/5:30 meetup after Matt's PD homeroom
 -learn what Mastermind is and how it works
 -psuedocoding
