@@ -9,5 +9,7 @@ class SecretCode
     @secret_code << peg
   end
 
-
+  def randomize
+    @secret_code.shuffle!
+  end
 end
