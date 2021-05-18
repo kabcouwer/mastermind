@@ -27,7 +27,7 @@ RSpec.describe SecretCode do
     @secret_code.add_peg(@peg3)
     @secret_code.add_peg(@peg4)
 
-    expect(@secret_code.secret_code).to eq([@peg1, @peg2, @peg3, @peg4])
+    expect(@secret_code.pegs).to eq([@peg1, @peg2, @peg3, @peg4])
   end
 
   it 'outputs a shuffled array of pegs' do
@@ -40,8 +40,22 @@ RSpec.describe SecretCode do
     @secret_code.add_peg(@peg7)
     @secret_code.add_peg(@peg8)
 
-    expect(@secret_code.secret_code).to eq([@peg1, @peg2, @peg3, @peg4, @peg5, @peg6, @peg7, @peg8])
+    expect(@secret_code.pegs).to eq([@peg1, @peg2, @peg3, @peg4, @peg5, @peg6, @peg7, @peg8])
     expect(@secret_code.randomize.length).to eq(8)
     expect(@secret_code.randomize).not_to eq([@peg1, @peg2, @peg3, @peg4, @peg5, @peg6, @peg7, @peg8])
+  end
+
+  it 'creates a secret code' do
+    @secret_code.add_peg(@peg1)
+    @secret_code.add_peg(@peg2)
+    @secret_code.add_peg(@peg3)
+    @secret_code.add_peg(@peg4)
+    @secret_code.add_peg(@peg5)
+    @secret_code.add_peg(@peg6)
+    @secret_code.add_peg(@peg7)
+    @secret_code.add_peg(@peg8)
+    @secret_code.randomize
+
+    expect(@secret_code.row.length).to eq(4)
   end
 end

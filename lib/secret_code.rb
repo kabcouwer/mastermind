@@ -1,15 +1,26 @@
 class SecretCode
-  attr_reader :secret_code
+  attr_reader :pegs, :secret_code
 
   def initialize
+    @pegs = []
     @secret_code = []
   end
 
   def add_peg(peg)
-    @secret_code << peg
+    @pegs << peg
   end
 
   def randomize
-    @secret_code.shuffle!
+    @pegs.shuffle!
+  end
+
+  def row
+    @pegs.each_with_index do |peg, index|
+      until index == 3
+      @secret_code << peg
+      break
+    end 
+    end
+    @secret_code
   end
 end
