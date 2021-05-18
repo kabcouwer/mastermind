@@ -18,7 +18,7 @@ RSpec.describe SecretCode do
   end
 
   it "has readable attributes" do
-    expect(@secret_code.secret_code).to eq([])
+    expect(@secret_code.code).to eq([])
   end
 
   it "can add pegs to secret code" do
@@ -45,7 +45,7 @@ RSpec.describe SecretCode do
     expect(@secret_code.randomize).not_to eq([@peg1, @peg2, @peg3, @peg4, @peg5, @peg6, @peg7, @peg8])
   end
 
-  it 'creates a secret code' do
+  it 'test the secret code' do
     @secret_code.add_peg(@peg1)
     @secret_code.add_peg(@peg2)
     @secret_code.add_peg(@peg3)
@@ -55,7 +55,20 @@ RSpec.describe SecretCode do
     @secret_code.add_peg(@peg7)
     @secret_code.add_peg(@peg8)
     @secret_code.randomize
+    @secret_code.row_one
+    @secret_code.row_two
+    @secret_code.row_three
+    @secret_code.row_four
+    @secret_code.create_code
 
-    expect(@secret_code.row.length).to eq(4)
+    expect(@secret_code.row_one.position).to eq(1)
+    expect(@secret_code.row_two.position).to eq(2)
+    expect(@secret_code.row_three.position).to eq(3)
+    expect(@secret_code.row_four.position).to eq(4)
+    expect(@secret_code.code.first.position).to eq(1)
+    expect(@secret_code.code[1].position).to eq(2)
+    expect(@secret_code.code[2].position).to eq(3)
+    expect(@secret_code.code.last.position).to eq(4)
+
   end
 end
