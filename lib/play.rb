@@ -25,23 +25,23 @@ class Play
     What's your guess?"
     first_guess = gets.chomp
     @guess = first_guess.scan /\w/
-    compare_blue
+    compare_color
   end
 
-  def compare_blue
-    if @guess.include?('b')
-      # @correct_colors += @solution.solution.count('b')
-      @solution.solution.each do |peg|
-        return true if peg.color.include?('b')
-        require 'pry'; binding.pry
-          # @correct_colors += 1
-        end
-      p 'code contains blue'
-    else
-      p 'code does not contain blue'
-    end
-    compare_first_position
-  end
+  # def compare_blue
+  #   if @guess.include?('b')
+  #     # @correct_colors += @solution.solution.count('b')
+  #     @solution.solution.each do |peg|
+  #       return true if peg.color.include?('b')
+  #       require 'pry'; binding.pry
+  #         # @correct_colors += 1
+  #       end
+  #     p 'code contains blue'
+  #   else
+  #     p 'code does not contain blue'
+  #   end
+  #   compare_first_position
+  # end
 
   # def compare_green
   #   if @guess.include?('g')
@@ -75,6 +75,18 @@ class Play
   # end
 
     # @guess.count(‘b’) == @code.code.count(‘b’)
+
+  def compare_color
+    # require 'pry'; binding.pry
+    solution_as_array_colors = []
+    @solution.solution.each do |color|
+      solution_as_array_colors << color.color
+    end
+    array_of_different_colors = (@guess.sort - solution_as_array_colors.sort)
+    @correct_colors += (4 - array_of_different_colors.length)
+    compare_first_position
+
+  end
 
   def compare_first_position
     if @guess[0] == @solution.solution[0].color
@@ -120,5 +132,6 @@ class Play
   def end_turn_message
       p "#{@guess.join.upcase} has #{@correct_colors} of the correct elements with #{@correct_positions} in the correct positions.
       You've taken #{@guess_counter} guess"
+      require 'pry'; binding.pry
   end
 end
