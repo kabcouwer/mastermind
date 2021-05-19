@@ -1,6 +1,6 @@
 
 class Play
-  attr_reader :guess, :code
+  attr_reader :guess, :code, :start_game
 
   def initialize(code)
     @guess = []
@@ -23,10 +23,45 @@ class Play
     What's your guess?"
     first_guess = gets.chomp
     @guess = first_guess.scan /\w/
-    require "pry"; binding.pry
+    compare_first_element
   end
 
-  def compare
+  def compare_first_element
+    if @guess[0] == @code.code[0].color
+      p 'first element is correct'
+      compare_second_element
+    else
+      p 'Not correct'
+      compare_second_element
+    end
+  end
 
+  def compare_second_element
+    if @guess[1] == @code.code[1].color
+      p 'second element is correct'
+      compare_third_element
+    else
+      p 'second element Not correct'
+      compare_third_element
+    end
+  end
+
+  def compare_third_element
+    if @guess[2] == @code.code[2].color
+      p 'third element is correct'
+      compare_fourth_element
+    else
+      p 'third element Not correct'
+      compare_fourth_element
+    end
+  end
+
+  def compare_fourth_element
+    if @guess[3] == @code.code[3].color
+      p 'fourth element is correct'
+    else
+      p 'fourth element Not correct'
+    end
+    p @guess_counter += 1
   end
 end
