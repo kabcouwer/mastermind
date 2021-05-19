@@ -3,14 +3,14 @@ require_relative 'spec_helper'
 RSpec.describe SecretCode do
   before :each do
     @secret_code = SecretCode.new
-    @peg1 = Peg.new(:blue, 4)
-    @peg2 = Peg.new(:red, 3)
-    @peg3 = Peg.new(:green, 2)
-    @peg4 = Peg.new(:yellow, 1)
-    @peg5 = Peg.new(:blue, 1)
-    @peg6 = Peg.new(:red, 2)
-    @peg7 = Peg.new(:green, 3)
-    @peg8 = Peg.new(:yellow, 4)
+    @peg1 = Peg.new('b', 4)
+    @peg2 = Peg.new('r', 3)
+    @peg3 = Peg.new('g', 2)
+    @peg4 = Peg.new('y', 1)
+    @peg5 = Peg.new('b', 1)
+    @peg6 = Peg.new('r', 2)
+    @peg7 = Peg.new('g', 3)
+    @peg8 = Peg.new('y', 4)
   end
 
   it "exists" do
