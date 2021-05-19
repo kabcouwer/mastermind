@@ -1,9 +1,9 @@
 class SecretCode
-  attr_reader :pegs, :code
+  attr_reader :pegs, :solution
 
   def initialize
     @pegs = []
-    @code = []
+    @solution = []
   end
 
   def add_peg(peg)
@@ -39,7 +39,7 @@ class SecretCode
   end
 
   def create_code
-    @code = [row_one, row_two, row_three, row_four]
+    @solution = [row_one, row_two, row_three, row_four]
   end
 
 end
