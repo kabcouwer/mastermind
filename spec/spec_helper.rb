@@ -7,3 +7,4 @@ end
 require './lib/game'
 require './lib/secret_code'
 require './lib/pegs'
+require './lib/play'
