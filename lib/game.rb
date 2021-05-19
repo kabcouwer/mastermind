@@ -1,4 +1,5 @@
 class Game
+  attr_reader :play
 
   # def hash
   #   hash = {'p' => play,
@@ -8,8 +9,8 @@ class Game
   #   }
   # end
 
-  def initialize
-
+  def initialize(play)
+    @play = play 
   end
 
   def welcome
@@ -20,7 +21,7 @@ class Game
     if user_input == 'i'
       instructions
     elsif user_input == 'p'
-      play
+      play_game
     elsif user_input == 'q'
       quit
     elsif user_input == 'c'
@@ -42,8 +43,8 @@ class Game
     Now that you have read the instructions, would you like to (p)lay or (q)uit?'
   end
 
-  def play
-    p 'play game'
+  def play_game
+    @play.start_game
   end
 
   def quit

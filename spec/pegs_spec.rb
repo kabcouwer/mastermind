@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 RSpec.describe Peg do
   before :each do
-    @peg = Peg.new(:blue, 4)
+    @peg = Peg.new('b', 4)
   end
 
   it "exists" do
@@ -10,7 +10,7 @@ RSpec.describe Peg do
   end
 
   it "has readable attritues" do
-    expect(@peg.color).to eq(:blue)
+    expect(@peg.color).to eq('b')
     expect(@peg.position).to eq(4)
   end
 
