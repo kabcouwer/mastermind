@@ -2,17 +2,17 @@ require_relative 'spec_helper'
 
 RSpec.describe Game do
   before :each do
-    @game = Game.new
+    @solution = CreateCode.new
+    @play = Play.new(@solution)
+    @game = Game.new(@play)
+    @message = Message.new
   end
 
   it "exists" do
     expect(@game).to be_an_instance_of(Game)
   end
 
-  xit 'has readable attributes' do
-    @game.welcome
-    expect(@game.hash.length).to eq(4)
-    expect(@game.hash['p']).to eq('bill')
-    expect(@game.hash['i']).to eq('here are the instructions')
+  it 'works' do
+    expect(@game.player_choice).to be_a(String)
   end
 end

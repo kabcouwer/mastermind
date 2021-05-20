@@ -1,22 +1,18 @@
 class Game
-  attr_reader :play
-
-  # def hash
-  #   hash = {'p' => play,
-  #     'i' => instructions,
-  #     'q' => quit,
-  #     'c' => cheat
-  #   }
-  # end
+  attr_reader :play,
+              :message
 
   def initialize(play)
-    @play = play 
+    @play = play
+    @message = message
   end
 
-  def welcome
-    # require "pry"; binding.pry
-    p 'Welcome to MASTERMIND\n'
-    p 'Would you like to (p)lay, read the (i)nstructions, or (q)uit?'
+  def welcome_screen
+    intro_message
+    player_choice
+  end
+
+  def player_choice
     user_input = gets.chomp
     if user_input == 'i'
       instructions
@@ -24,35 +20,13 @@ class Game
       play_game
     elsif user_input == 'q'
       quit
-    elsif user_input == 'c'
+    elsif user_input == 'c' || user_input == 'cheat'
       cheat
     end
   end
 
-  def instructions
-    p 'MASTERMIND Game Rules
-
-    OBJECT OF THE GAME
-
-    The object of MASTERMIND is to guess a secret code consisting of a series of 4 colored "pegs". Each guess results in feedback narrowing down the possibilities of the code. You win the game by solving the secret code.
-
-    TO BEGIN
-
-    When prompted, enter your first guess, a sequence with four elements made up of: (r)ed, (g)reen, (b)blue, and (y)ellow. For example: rrgb
-
-    Now that you have read the instructions, would you like to (p)lay or (q)uit?'
-  end
-
   def play_game
-    @play.start_game
-  end
-
-  def quit
-    p 'Maybe next time'
-  end
-
-  def cheat
-    p "Can't do it on your own, huh?"
+    @play.start
   end
 
 end
