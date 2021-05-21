@@ -1,15 +1,4 @@
-class Message
-  attr_reader :intro_message,
-              :start_message,
-              :instructions,
-              :quit
-
-  def initialize
-    @intro_message = intro_message
-    @start_message = start_message
-    @instructions = instructions
-    @quit = quit
-  end
+module Message
 
   def intro_message
     'Welcome to MASTERMIND'
@@ -40,4 +29,16 @@ class Message
     'Maybe next time'
   end
 
+  def input_too_long
+    'Invalid Input. Your guess contains too many characters. Re-Enter Guess: '
+  end
+
+  def input_too_short
+    "Invalid Input. Your guess does not have enough characters. Re-Enter Guess: "
+  end
+
+  def end_turn_message
+    p "#{@guess.join.upcase} has #{@correct_colors} of the correct elements with #{@correct_positions} in the correct positions.
+    You've taken #{@guess_counter} guess. What is your next guess?"
+  end
 end

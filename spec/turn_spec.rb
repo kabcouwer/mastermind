@@ -1,47 +1,42 @@
 require_relative 'spec_helper'
 
-RSpec.describe Play do
+RSpec.describe Turn do
   before :each do
-    @peg1 = Peg.new('b', 4)
-    @peg2 = Peg.new('r', 3)
-    @peg3 = Peg.new('g', 2)
-    @peg4 = Peg.new('y', 1)
-    @peg5 = Peg.new('b', 1)
-    @peg6 = Peg.new('r', 2)
-    @peg7 = Peg.new('g', 3)
-    @peg8 = Peg.new('y', 4)
-    @code1 = SecretCode.new
-    @code1.add_peg(@peg1)
-    @code1.add_peg(@peg2)
-    @code1.add_peg(@peg3)
-    @code1.add_peg(@peg4)
-    @code1.add_peg(@peg5)
-    @code1.add_peg(@peg6)
-    @code1.add_peg(@peg7)
-    @code1.add_peg(@peg8)
-    @code1.randomize
-    @code1.row_one
-    @code1.row_two
-    @code1.row_three
-    @code1.row_four
-    @code1.create_code
-    @play = Play.new(@code1)
+    @guess = 'rgyb'
+    @code = CreateCode.new
+    @turn = Turn.new(@guess, @code)
   end
 
-  it 'exists' do
-    expect(@play).to be_a(Play)
+  xit 'exists' do
+    expect(@turn).to be_a(Turn)
   end
 
-  it 'has readable attributes' do
-    expect(@play.code).to eq(@code1)
-    expect(@play.guess).to eq([])
+  xit 'has readable attributes' do
+    expect(@turn.code).to eq(@code)
+    expect(@turn.guess).to be_a(String)
   end
 
-  it 'test start game to message' do
-    expect(@play.start_game).to be_a(Array)
+  xit 'finds correct guesses' do
+    guess = 'rgyb'
+    code = CreateCode.new
+    # code = ['r', 'g', 'y', 'b']
+    turn = Turn.new(guess, code)
+
+    expect(turn.correct_colors).to eq(4)
+
+    guess2 = 'rgyy'
+    turn2 = Turn.new(guess2, code)
+
+    expect(turn2.correct_colors).to eq(3)
   end
 
-  it "compare element" do
-    @play.compare_first_element
+  it 'can compare elements to secret code' do
+    guess = 'rgyb'
+    code = CreateCode.new
+    turn = Turn.new(guess, code)
+    expect(@turn.compare_first_position).to eq(1)
+    expect(@turn.compare_second_position).to eq(1)
+    expect(@turn.compare_third_position).to eq(2)
+    expect(@turn.compare_fourth_position).to eq(3)
   end
 end

@@ -1,73 +1,53 @@
 class Turn
-  attr_reader :guess, :solution, :start_game
+  attr_reader :guess, :code
 
-  def initialize(solution)
+  def initialize(guess, code)
     @guess = guess
-    @solution = solution
-    @guess_counter = 0
-    @correct_colors = 0
+    @code = code
+    # @guess_counter = 0
+    # @correct_colors = 0
     @correct_positions = 0
   end
 
-  def start_game
-    p start_message
-    first_guess = gets.chomp
-    @guess = first_guess.downcase.split(//)
-    compare_color
-  end
-
-  def compare_color
-    # require 'pry'; binding.pry
-    array_of_different_colors = (@solution.sort - @guess.sort)
-    @correct_colors += (4 - array_of_different_colors.length)
-    compare_first_position
+  def correct_colors
+    format_guess = guess.split('')
+    correct_colors = 0
+    format_guess.uniq.each do |character|
+      if @code.solution.include?(character)
+        correct_colors +=1
+      end
+    end
+    correct_colors
   end
 
   def compare_first_position
-    @correct_positions = 0
-    if @guess[0] == @solution[0]
-      p 'first position is correct'
+    format_guess = guess.split('')
+    if format_guess[0] == @code.solution[0]
       @correct_positions += 1
     else
-      p 'first position not correct'
+      'no winner'
     end
-    compare_second_position
+
   end
 
   def compare_second_position
-    if @guess[1] == @solution[1]
-      p 'second position is correct'
+    guess = guess.split('')
+    if @guess[1] == @code.solution[1]
       @correct_positions += 1
     else
-      p 'second position not correct'
+      'no winner'
     end
-    compare_third_positon
   end
 
   def compare_third_positon
-    if @guess[2] == @solution[2]
-      p 'third position is correct'
+    if @guess[2] == @code.solution[2]
       @correct_positions += 1
-    else
-      p 'third position not correct'
     end
-    compare_fourth_position
   end
 
   def compare_fourth_position
-    if @guess[3] == @solution[3]
-      p 'fourth position is correct'
+    if @guess[3] == @code.solution[3]
       @correct_positions += 1
-    else
-      p 'fourth position not correct'
     end
-    @guess_counter += 1
-    end_turn_message
-  end
-
-  def end_turn_message
-      p "#{@guess.join.upcase} has #{@correct_colors} of the correct elements with #{@correct_positions} in the correct positions.
-      You've taken #{@guess_counter} guess"
-      # require 'pry'; binding.pry
   end
 end
