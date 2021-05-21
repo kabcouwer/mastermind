@@ -1,8 +1,8 @@
 # DTR
 
 ## Learning goals
--teamwork + collaboration
--figuring out projects without much of a roadmap
+- teamwork + collaboration
+- figuring out projects without much of a roadmap
 - psuedocoding
 - setting structure / deciding how to split the project into sections
 - implement testing rather than running pry
@@ -16,20 +16,20 @@
 -learning from each other and getting some hot tips on whats working well and whats not
 
 ## Collaboration Style
--Matt
+- Matt
 - equal decision making
 - equal input
 - agreement
 - pair programming is best -Dragon Alligator
 
--Kim
+- Kim
 - equal decision making
 - equal input
 - agreement
 - pair programming is best -Dragon Alligator
 
 ## Communication - how do we communicate best
--Kim
+- Kim
 - appreciate open and honest
 - slack / zoom calls
 - checkins to make sure we're on the same page and if we need to make any changes
@@ -37,7 +37,7 @@
 - laid back
 - willingness to learn how to be better collaborators / open to critical feedback
 
--Matt
+- Matt
 - giving and receiving feedback (positive and critical)
 - being positive
 - laid back
@@ -46,7 +46,7 @@
 - willingness to learn how to be better collaborators / open to critical feedback
 
 ## Describe your work style
--Kim
+- Kim
 - Quiet spaces work well
 - Putting on pants not sweats
 - Listen to music sometimes
@@ -58,7 +58,7 @@
 - I have a hard time going to bed on code with bugs - working on it!
 - flexible
 
--Matt
+- Matt
 - Quiet spaces work well
 - Study hall / working with others has been helping take more breaks
 - Preteach in the mornings
@@ -67,22 +67,22 @@ til about 9/10
 - flexible
 
 ## Strengths
--Kim
+- Kim
 - empathy
 - if I do something, I do it well
 - communicating my needs and boundaries
 - feel like I'm in the middle of the class in a technical sense with my engineering undergrad
 - good at problem solving
 
--Matt
+- Matt
 - strong attention to detail
 - very persistent
 - go above and beyond on tasks / do good work
 - resourceful
 
 ## Strengths and how they compliment each other
--do good work
--Kims problem solving and Matts attention to detail will work well together
+- do good work
+- Kims problem solving and Matts attention to detail will work well together
 
 ## What's going well
 -cohort is awesome and super supportive and helpful

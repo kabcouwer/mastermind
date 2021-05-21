@@ -10,7 +10,6 @@ class Mastermind
   end
 
   def welcome_screen
-    require "pry"; binding.pry
     p intro_message
     player_choice
   end
