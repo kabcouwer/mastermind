@@ -4,7 +4,7 @@ require 'simplecov'
 SimpleCov.start do
 end
 
-require './lib/game'
-require './lib/secret_code'
-require './lib/pegs'
-require './lib/play'
+require './lib/message'
+require './lib/mastermind'
+require './lib/create_code'
+require './lib/turn'
