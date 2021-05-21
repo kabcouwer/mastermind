@@ -9,7 +9,7 @@ RSpec.describe Mastermind do
     expect(@mastermind).to be_an_instance_of(Mastermind)
   end
 
-  it 'can initialize with other classes' do
+  xit 'can initialize with other classes' do
     expect(@mastermind.turn).to be_an_instance_of(Turn)
   end
 
