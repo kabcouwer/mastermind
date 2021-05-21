@@ -1,16 +1,16 @@
 class Mastermind
   include Message
 
-  attr_reader :turn, :guess
+  attr_reader :guess
 
 
   def initialize
-    @guess = guess
-    @code = CreateCode.new
-    @turn = Turn.new(@guess, @code)
+    @guess = 'tttt'
+    @turn = Turn.new(@guess)
   end
 
   def welcome_screen
+    require "pry"; binding.pry
     p intro_message
     player_choice
   end
@@ -34,7 +34,6 @@ class Mastermind
 
   def continue_game
     @guess = gets.chomp
-    # @guess = next_guess.downcase.split(//)
   end
 
   def run_game
