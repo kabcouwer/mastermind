@@ -11,7 +11,7 @@ class Turn
   end
 
   def split_guess_into_array
-    guess = @mastermind.guess.split('')
+    guess = guess.split('')
     correct_colors
   end
 
