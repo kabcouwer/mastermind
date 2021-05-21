@@ -30,11 +30,11 @@ module Message
   end
 
   def input_too_long
-    'Invalid Input. Your guess contains too many characters. Re-Enter Guess: '
+    'Invalid Input. Your guess contains too many characters.'
   end
 
   def input_too_short
-    "Invalid Input. Your guess does not have enough characters. Re-Enter Guess: "
+    "Invalid Input. Your guess does not have enough characters."
   end
 
   def end_turn_message

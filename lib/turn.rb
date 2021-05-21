@@ -2,7 +2,7 @@ class Turn
   attr_reader :guess, :code
 
   def initialize(guess)
-    @guess = guess.split('')
+    @guess = guess
     # @code = code
     # @guess_counter = 0
     # @correct_colors = 0
@@ -10,10 +10,16 @@ class Turn
     @code = CreateCode.new.solution
   end
 
+  def split_guess_into_array
+    guess = @mastermind.guess.split('')
+    correct_colors
+  end
+
   def correct_colors
+    # user_guess = guess.split('')
     require "pry"; binding.pry
     correct_colors = 0
-    @guess.uniq.each do |character|
+    guess.uniq.each do |character|
       if @code.include?(character)
         correct_colors +=1
       end
