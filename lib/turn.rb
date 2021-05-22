@@ -3,9 +3,7 @@ require './lib/mastermind'
 class Turn
   include Message
 
-
   def initialize
-
   end
 
   def correct_colors(guess, solution)

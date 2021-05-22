@@ -11,7 +11,7 @@ class Mastermind
   end
 
   def welcome_screen
-    p intro_message
+    intro_message
     #need to loop input to accept either P or Q
     player_choice
   end
@@ -30,20 +30,17 @@ class Mastermind
   end
 
   def start_game
-    p start_message
+    start_message
     guess = gets.chomp
     if guess == 'q' || guess == 'quit'
-      p quit
-    elsif
-      guess == 'c' || guess == 'cheat'
-        cheat
-    elsif
-      guess.length < 4
-      p input_too_short
+      quit
+    elsif guess == 'c' || guess == 'cheat'
+      cheat
+    elsif guess.length < 4
+      input_too_short
       start_game
-    elsif
-      guess.length > 4
-      p input_too_long
+    elsif guess.length > 4
+      input_too_long
       start_game
     else
 
@@ -59,7 +56,6 @@ class Mastermind
     guess_count = 0
     while guess_count < 11
       guess_count += 1
-
     end
   end
 end
