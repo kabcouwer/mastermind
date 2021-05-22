@@ -24,8 +24,6 @@ class Mastermind
       run_game
     elsif guess == 'q' || guess == 'quit'
       quit
-    elsif guess == 'c' || guess == 'cheat'
-      cheat
     end
   end
 
@@ -58,14 +56,12 @@ class Mastermind
         game_won_message(guess)
         break
       elsif guess.downcase != @solution
-        @turn.correct_colors(guess, @solution)
-        @turn.correct_positions(guess, @solution)
-
         over_message(guess, @solution, guess_count)
         break if @turn.has_won?(guess, @solution) || guess_count == 10
-      elsif !guess.downcase
-        start_game
-      end
+
+      elsif guess.downcase == 'c' || guess == 'cheat'
+        cheat
+      end 
     end
     game_over_message
   end
