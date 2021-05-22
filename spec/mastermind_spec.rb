@@ -9,11 +9,16 @@ RSpec.describe Mastermind do
     expect(@mastermind).to be_an_instance_of(Mastermind)
   end
 
-  xit 'can initialize with other classes' do
+  it 'can initialize with other classes' do
     expect(@mastermind.turn).to be_an_instance_of(Turn)
   end
 
-  it 'testing' do
-    expect(@mastermind.welcome_screen).to be_a(2)
+  it 'can display messages' do
+    expect(!@mastermind.welcome).to eq(welcome)
+  end
+  
+  it 'can restart game if input is wrong' do
+
+
   end
 end
