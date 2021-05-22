@@ -16,7 +16,7 @@ RSpec.describe Mastermind do
   it 'can display messages' do
     expect(!@mastermind.welcome).to eq(welcome)
   end
-  
+
   it 'can restart game if input is wrong' do
 
 

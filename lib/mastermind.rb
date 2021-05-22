@@ -17,11 +17,11 @@ class Mastermind
   end
 
   def player_choice
-    @guess = gets.chomp
+    guess = gets.chomp
     if guess == 'i'
       instructions
     elsif guess == 'p'
-      start_game
+      run_game
     elsif guess == 'q' || guess == 'quit'
       quit
     elsif guess == 'c' || guess == 'cheat'
@@ -43,19 +43,30 @@ class Mastermind
       input_too_long
       start_game
     else
-
-    @turn.correct_colors(guess, @solution)
+      run_game
     end
   end
 
-  # def continue_game
-  #   @guess = gets.chomp
-  # end
-
   def run_game
     guess_count = 0
+    start_message
     while guess_count < 11
       guess_count += 1
+      guess = gets.chomp
+
+      if guess.downcase == @solution
+        game_won_message(guess)
+        break
+      elsif guess.downcase != @solution
+        @turn.correct_colors(guess, @solution)
+        @turn.correct_positions(guess, @solution)
+
+        over_message(guess, @solution, guess_count)
+        break if @turn.has_won?(guess, @solution) || guess_count == 10
+      elsif !guess.downcase
+        start_game
+      end
     end
+    game_over_message
   end
 end
