@@ -21,23 +21,22 @@ RSpec.describe Turn do
     expect(turn.correct_colors(guess, solution2)).to eq(2)
   end
 
-  xit 'will return false if guess is wrong' do
+  it 'will return false if guess is wrong' do
     guess = 'gbyr'
-    # code = ['g', 'b', 'b', 'y']
+    solution = ['g', 'b', 'b', 'y']
     turn = Turn.new
-    expect(turn.has_won?).to be(false)
+    expect(turn.has_won?(guess, solution)).to be(false)
   end
 
-  xit 'will return true if guess is correct' do
+  it 'will return true if guess is correct' do
     guess = 'gbyr'
-    code = ['g', 'b', 'y', 'r']
-    turn = Turn.new(guess, code)
-    expect(turn.has_won?).to be(true)
+    solution = ['g', 'b', 'y', 'r']
+    turn = Turn.new
+    expect(turn.has_won?(guess, solution)).to be(true)
   end
 
   it 'can compare elements to secret code' do
     guess = 'rgyb'
-    code = CreateCode.new
     turn = Turn.new
     solution = ['g', 'b', 'b', 'y']
     expect(turn.correct_positions(guess, solution)).to eq(0)
