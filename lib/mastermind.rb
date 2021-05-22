@@ -1,28 +1,30 @@
+require './lib/turn'
+
 class Mastermind
   include Message
 
-  attr_reader :guess
+  attr_reader :turn
 
   def initialize
-    @guess = guess
-    @turn = Turn.new(@guess)
+    @turn = Turn.new
+    @solution = CreateCode.new.solution
   end
 
   def welcome_screen
-    # require "pry"; binding.pry
     p intro_message
+    #need to loop input to accept either P or Q
     player_choice
   end
 
   def player_choice
-    user_input = gets.chomp
-    if user_input == 'i'
-      p instructions
-    elsif user_input == 'p'
+    @guess = gets.chomp
+    if guess == 'i'
+      instructions
+    elsif guess == 'p'
       start_game
-    elsif user_input == 'q' || user_input == 'quit'
-      p quit
-    elsif user_input == 'c' || user_input == 'cheat'
+    elsif guess == 'q' || guess == 'quit'
+      quit
+    elsif guess == 'c' || guess == 'cheat'
       cheat
     end
   end
@@ -44,7 +46,8 @@ class Mastermind
       p input_too_long
       start_game
     else
-      @turn.correct_colors
+
+    @turn.correct_colors(guess, @solution)
     end
   end
 

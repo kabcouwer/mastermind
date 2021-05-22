@@ -1,40 +1,30 @@
 require_relative 'spec_helper'
 
 RSpec.describe Turn do
-  xit 'exists' do
+  it 'exists' do
     guess = 'rgyb'
     code = CreateCode.new
-    turn = Turn.new(guess, code)
+    turn = Turn.new
 
     expect(turn).to be_a(Turn)
   end
 
-  xit 'has readable attributes' do
-    guess = 'rgyb'
+
+  it 'finds correct colors' do
     code = CreateCode.new
-    turn = Turn.new(guess, code)
+    turn = Turn.new
+    guess = 'rryb'
+    solution1 = ['r', 'r', 'b', 'y']
+    solution2 = ['y', 'b', 'b', 'y']
 
-    expect(turn.code).to eq(code)
-    expect(turn.guess.class).to eq(Array)
+    expect(turn.correct_colors(guess, solution1)).to eq(4)
+    expect(turn.correct_colors(guess, solution2)).to eq(2)
   end
 
-  it 'finds correct guesses' do
-    guess = 'rgyb'
-    turn = Turn.new(guess)
-    @code = ['r', 'g', 'y', 'b']
-
-    expect(turn.correct_colors).to eq(4)
-
-    guess2 = 'rgyy'
-    turn2 = Turn.new(guess2)
-
-    expect(turn2.correct_colors).to eq(3)
-  end
-
-  it 'will return false if guess is wrong' do
+  xit 'will return false if guess is wrong' do
     guess = 'gbyr'
     # code = ['g', 'b', 'b', 'y']
-    turn = Turn.new(guess)
+    turn = Turn.new
     expect(turn.has_won?).to be(false)
   end
 
@@ -45,13 +35,11 @@ RSpec.describe Turn do
     expect(turn.has_won?).to be(true)
   end
 
-  xit 'can compare elements to secret code' do
+  it 'can compare elements to secret code' do
     guess = 'rgyb'
     code = CreateCode.new
-    turn = Turn.new(guess, code)
-    expect(turn.compare_first_position).to eq(1)
-    expect(turn.compare_second_position).to eq(1)
-    expect(turn.compare_third_position).to eq(2)
-    expect(turn.compare_fourth_position).to eq(3)
+    turn = Turn.new
+    solution = ['g', 'b', 'b', 'y']
+    expect(turn.correct_positions(guess, solution)).to eq(0)
   end
 end
