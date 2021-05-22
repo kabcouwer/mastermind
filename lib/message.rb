@@ -28,11 +28,19 @@ module Message
     puts "Invalid Input. Your guess does not have the correct characters.\r\nTry (r)ed, (g)reen, (b)lue, and (y)ellow. For example: rrgb"
   end
 
-  def end_turn_message
-    puts "#{@guess.join.upcase} has #{@correct_colors} of the correct elements with #{@correct_positions} in the correct positions.\r\nYou've taken #{@guess_counter} guess. What is your next guess?"
+  def over_message(guess, solution, guess_count)
+    puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct positions.\r\nYou've taken #{guess_count} guesses. What is your next guess?"
   end
 
-  def end_game_message
-    puts "Congratulations! You guessed the sequence #{@code.solution.upcase} in 8 guesses over #{time}.\r\nDo you want to (p)lay again or (q)uit?"
+  def first_over_message(guess, solution, guess_count)
+    puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct positions.\r\nYou've taken #{guess_count} guess. What is your next guess?"
+  end
+
+  def game_over_message
+    puts "Game over!\r\nWould you like to (p)lay, read the (i)nstructions, or (q)uit?"
+  end
+
+  def game_won_message(guess, guess_count)
+    puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time}.\r\nDo you want to (p)lay again or (q)uit?"
   end
 end
