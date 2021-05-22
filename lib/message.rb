@@ -29,7 +29,7 @@ module Message
   end
 
   def over_message(guess, solution, guess_count)
-    puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct positions.\r\nYou've taken #{guess_count} guesses. What is your next guess?"
+    puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct positions.\r\nYou've taken #{guess_count} guess(es). What is your next guess?"
   end
 
   def first_over_message(guess, solution, guess_count)
