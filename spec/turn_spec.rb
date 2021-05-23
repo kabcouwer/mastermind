@@ -40,6 +40,7 @@ RSpec.describe Turn do
     turn = Turn.new
     solution = ['g', 'b', 'b', 'y']
     solution2 = ['r', 'b', 'y', 'b']
+
     expect(turn.correct_positions(guess, solution)).to eq(0)
     expect(turn.correct_positions(guess, solution2)).to eq(3)
   end
