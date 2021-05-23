@@ -12,7 +12,6 @@ class Mastermind
 
   def welcome_screen
     intro_message
-    #need to loop input to accept either P or Q
     player_choice
   end
 
@@ -22,32 +21,14 @@ class Mastermind
   end
 
   def player_choice
-    guess = gets.chomp
+    guess = gets.chomp.downcase
     if guess == 'i'
       instructions
-      run_game
+      player_choice
     elsif guess == 'p'
       run_game
     elsif guess == 'q' || guess == 'quit'
       quit
-    end
-  end
-
-  def start_game
-    start_message
-    guess = gets.chomp
-    if guess == 'q' || guess == 'quit'
-      quit
-    elsif guess == 'c' || guess == 'cheat'
-      cheat
-    elsif guess.length < 4
-      input_too_short
-      start_game
-    elsif guess.length > 4
-      input_too_long
-      start_game
-    else
-      run_game
     end
   end
 
@@ -57,28 +38,39 @@ class Mastermind
     start_message
     while guess_count < 11
       guess_count += 1
-      guess = gets.chomp
+      guess = gets.chomp.downcase
 
-      if guess.downcase == 'c' || guess.downcase == 'cheat'
+
+      if guess == 'q' || guess == 'quit'
+        quit
+        break
+      elsif guess == 'c' || guess == 'cheat'
         cheat(@solution)
+      elsif guess.length < 4
+        input_too_short
+        guess_count -= 1
+      elsif guess.length > 4
+        input_too_long
+        guess_count -= 1
       elsif guess.split('') == @solution
         game_won_time = Time.now.min
         game_won_message(guess, guess_count, (game_won_time - start_time))
+        game_over
         break
-      elsif guess.downcase != @solution
-        over_message(guess, @solution, guess_count)
+      elsif guess != @solution
+        feedback_message(guess, @solution, guess_count)
       end
     end
-    game_over
   end
 
   def game_over
     game_over_message
-    guess = gets.chomp
+    guess = gets.chomp.downcase
     if guess == 'p'
       play_again
     elsif guess == 'q'
       quit
     end
   end
+
 end
