@@ -52,17 +52,29 @@ class Mastermind
       guess_count += 1
       guess = gets.chomp
 
-      if guess.downcase == @solution
+      if guess.downcase == 'c' || guess.downcase == 'cheat'
+        cheat(@solution)
+        try_again
+      elsif guess == @solution
         game_won_message(guess)
         break
       elsif guess.downcase != @solution
         over_message(guess, @solution, guess_count)
         break if @turn.has_won?(guess, @solution) || guess_count == 10
-
-      elsif guess.downcase == 'c' || guess == 'cheat'
-        cheat
-      end 
+      end
     end
+    game_over
+  end
+
+  def game_over
     game_over_message
+    guess = gets.chomp
+    if guess == 'p'
+      run_game
+    elsif guess == 'q'
+      quit
+    elsif guess == 'i'
+      instructions
+    end
   end
 end
