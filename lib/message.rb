@@ -36,9 +36,6 @@
       cheat = solution.join(' ')
       solution = cheat.gsub!(/[rbgy]/, 'r' => 'Red', 'b' => 'Blue', 'g' => 'Green', 'y' => 'Yellow')
       puts solution
-    end
-
-    def try_again
       puts 'Enter another guess: '
     end
 
@@ -47,10 +44,10 @@
     end
 
     def game_over_message
-      puts "Game over!\r\nWould you like to (p)lay, read the (i)nstructions, or (q)uit?"
+      puts "Game over!\r\nWould you like to (p)lay again or (q)uit?"
     end
 
-    def game_won_message(guess, guess_count)
+    def game_won_message(guess, guess_count, time)
       puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time}.\r\nDo you want to (p)lay again or (q)uit?"
     end
   end
