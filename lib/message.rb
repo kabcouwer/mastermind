@@ -28,7 +28,7 @@
       puts "Invalid Input. Your guess does not have the correct characters.\r\nTry (r)ed, (g)reen, (b)lue, and (y)ellow. For example: rrgb"
     end
 
-    def over_message(guess, solution, guess_count)
+    def feedback_message(guess, solution, guess_count)
       puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct position(s).\r\nYou've taken #{guess_count} guess(es). What is your next guess?"
     end
 
@@ -48,6 +48,6 @@
     end
 
     def game_won_message(guess, guess_count, time)
-      puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time}.\r\nDo you want to (p)lay again or (q)uit?"
+      puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time}."
     end
   end
