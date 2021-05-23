@@ -47,7 +47,7 @@
       puts "Game over!\r\nWould you like to (p)lay again or (q)uit?"
     end
 
-    def game_won_message(guess, guess_count, time)
-      puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time}."
+    def game_won_message(guess, guess_count, time_min, time_sec)
+      puts "Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time_min} minutes, #{time_sec} seconds."
     end
   end

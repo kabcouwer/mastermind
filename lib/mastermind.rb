@@ -33,7 +33,8 @@ class Mastermind
   end
 
   def run_game
-    start_time = Time.now.min
+    start_time_min = Time.now.min
+    start_time_sec = Time.now.sec
     guess_count = 0
     start_message
     while guess_count < 11
@@ -53,8 +54,9 @@ class Mastermind
         input_too_long
         guess_count -= 1
       elsif guess.split('') == @solution
-        game_won_time = Time.now.min
-        game_won_message(guess, guess_count, (game_won_time - start_time))
+        won_time_min = Time.now.min
+        won_time_sec = Time.now.sec
+        game_won_message(guess, guess_count, (won_time_min - start_time_min), (won_time_sec - start_time_sec))
         game_over
         break
       elsif guess != @solution
