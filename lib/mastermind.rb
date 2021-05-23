@@ -16,16 +16,20 @@ class Mastermind
     player_choice
   end
 
+  def play_again
+    @solution = CreateCode.new.solution
+    run_game
+  end
+
   def player_choice
-    @guess = gets.chomp
+    guess = gets.chomp
     if guess == 'i'
       instructions
+      run_game
     elsif guess == 'p'
-      start_game
+      run_game
     elsif guess == 'q' || guess == 'quit'
       quit
-    elsif guess == 'c' || guess == 'cheat'
-      cheat
     end
   end
 
@@ -43,19 +47,38 @@ class Mastermind
       input_too_long
       start_game
     else
-
-    @turn.correct_colors(guess, @solution)
+      run_game
     end
   end
 
-  # def continue_game
-  #   @guess = gets.chomp
-  # end
-
   def run_game
+    start_time = Time.now.min
     guess_count = 0
+    start_message
     while guess_count < 11
       guess_count += 1
+      guess = gets.chomp
+
+      if guess.downcase == 'c' || guess.downcase == 'cheat'
+        cheat(@solution)
+      elsif guess.split('') == @solution
+        game_won_time = Time.now.min
+        game_won_message(guess, guess_count, (game_won_time - start_time))
+        break
+      elsif guess.downcase != @solution
+        over_message(guess, @solution, guess_count)
+      end
+    end
+    game_over
+  end
+
+  def game_over
+    game_over_message
+    guess = gets.chomp
+    if guess == 'p'
+      play_again
+    elsif guess == 'q'
+      quit
     end
   end
 end

@@ -1,10 +1,6 @@
 require './lib/mastermind'
 
 class Turn
-  include Message
-
-  def initialize
-  end
 
   def correct_colors(guess, solution)
     array_guess = guess.split('')
@@ -19,7 +15,8 @@ class Turn
   end
 
   def has_won?(guess, solution)
-    guess == code
+    array_guess = guess.split('')
+    array_guess == solution
   end
 
   def correct_positions(guess, solution)
