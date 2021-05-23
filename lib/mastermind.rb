@@ -16,10 +16,16 @@ class Mastermind
     player_choice
   end
 
+  def play_again
+    @solution = CreateCode.new.solution
+    run_game
+  end
+
   def player_choice
     guess = gets.chomp
     if guess == 'i'
       instructions
+      run_game
     elsif guess == 'p'
       run_game
     elsif guess == 'q' || guess == 'quit'
@@ -46,6 +52,7 @@ class Mastermind
   end
 
   def run_game
+    start_time = Time.now.min
     guess_count = 0
     start_message
     while guess_count < 11
@@ -54,13 +61,12 @@ class Mastermind
 
       if guess.downcase == 'c' || guess.downcase == 'cheat'
         cheat(@solution)
-        try_again
-      elsif guess == @solution
-        game_won_message(guess)
+      elsif guess.split('') == @solution
+        game_won_time = Time.now.min
+        game_won_message(guess, guess_count, (game_won_time - start_time))
         break
       elsif guess.downcase != @solution
         over_message(guess, @solution, guess_count)
-        break if @turn.has_won?(guess, @solution) || guess_count == 10
       end
     end
     game_over
@@ -70,11 +76,9 @@ class Mastermind
     game_over_message
     guess = gets.chomp
     if guess == 'p'
-      run_game
+      play_again
     elsif guess == 'q'
       quit
-    elsif guess == 'i'
-      instructions
     end
   end
 end
