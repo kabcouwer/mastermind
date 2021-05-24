@@ -69,8 +69,8 @@ class Mastermind
         feedback_message(guess, @solution, guess_count)
       end
     end
-    end
   end
+end
 
   def game_over
     game_over_message
