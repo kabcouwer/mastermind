@@ -39,10 +39,6 @@
       puts 'Enter another guess: '
     end
 
-    def first_over_message(guess, solution, guess_count)
-      puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct position.\r\nYou've taken #{guess_count} guess. What is your next guess?"
-    end
-
     def game_over_message
       puts "Game over!\r\nWould you like to (p)lay again or (q)uit?"
     end

@@ -41,7 +41,6 @@ class Mastermind
       guess_count += 1
       guess = gets.chomp.downcase
 
-
       if guess == 'q' || guess == 'quit'
         quit
         break
@@ -53,7 +52,14 @@ class Mastermind
       elsif guess.length > 4
         input_too_long
         guess_count -= 1
-      elsif guess.split('') == @solution
+      elsif x = guess.split('').find_all do |character|
+        character == 'r' || character == 'g' || character == 'b' || character == 'y'
+      end
+      if x.length != 4
+        invalid_character_input_message
+        guess_count -= 1
+      elsif
+        guess.split('') == @solution
         won_time_min = Time.now.min
         won_time_sec = Time.now.sec
         game_won_message(guess, guess_count, (won_time_min - start_time_min), (won_time_sec - start_time_sec))
@@ -64,6 +70,7 @@ class Mastermind
       end
     end
   end
+end
 
   def game_over
     game_over_message
@@ -74,5 +81,4 @@ class Mastermind
       quit
     end
   end
-
 end
