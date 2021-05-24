@@ -34,7 +34,6 @@ class Mastermind
 
   def run_game
     start_time = Time.now
-    x = Time.now
     guess_count = 0
     start_message
     while guess_count < 11
@@ -52,12 +51,17 @@ class Mastermind
       elsif guess.length > 4
         input_too_long
         guess_count -= 1
-      elsif guess.split('') == @solution
+      elsif x = guess.split('').find_all do |character|
+        character == 'r' || character == 'g' || character == 'b' || character == 'y'
+      end
+      if x.length != 4
+        invalid_character_input_message
+        guess_count -= 1
+      elsif
+        guess.split('') == @solution
         won_time = Time.now
-        y = Time.now
         game_time_sec = (won_time.sec - start_time.sec) % 60
         game_time_min = (won_time - start_time) / 60
-        require "pry"; binding.pry
         game_won_message(guess, guess_count, game_time_min.floor, game_time_sec)
         game_over
         break
@@ -68,6 +72,8 @@ class Mastermind
         end
       end
     end
+  end
+end
 
   def game_over
     game_over_message
