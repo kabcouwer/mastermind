@@ -13,6 +13,7 @@ RSpec.describe Mastermind do
     expect(@mastermind.turn).to be_an_instance_of(Turn)
   end
 
+
   it 'creates a solution and is an array' do
     expect(@mastermind.solution.class).to eq(Array)
   end
@@ -30,7 +31,8 @@ RSpec.describe Mastermind do
     allow(@mastermind).to receive(:gets).and_return('q')
 
     expect(@mastermind.player_choice).to eq(@mastermind.quit)
-  end
+  end 
+end 
 
   # xit 'can initialize time' do
   #   time_now = Time.now
@@ -40,5 +42,3 @@ RSpec.describe Mastermind do
   #
   #   expect(@mastermind.run_game).to eq(time_now)
   # end
-
-end

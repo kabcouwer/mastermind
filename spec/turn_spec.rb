@@ -28,13 +28,13 @@ RSpec.describe Turn do
     array_guess = guess.split('')
     expect(array_guess.class).to eq(Array)
     expect(array_guess.length).to eq(4)
-
   end
 
   it 'will return false if guess is wrong' do
     guess = 'gbyr'
     solution = ['g', 'b', 'b', 'y']
     turn = Turn.new
+
     expect(turn.has_won?(guess, solution)).to be(false)
   end
 
@@ -42,6 +42,7 @@ RSpec.describe Turn do
     guess = 'gbyr'
     solution = ['g', 'b', 'y', 'r']
     turn = Turn.new
+
     expect(turn.has_won?(guess, solution)).to be(true)
   end
 
