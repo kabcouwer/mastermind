@@ -73,7 +73,7 @@ class Mastermind
       end
     end
   end
-end
+
 
   def game_over
     game_over_message
