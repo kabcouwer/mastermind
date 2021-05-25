@@ -70,19 +70,18 @@ class Mastermind
         game_over
       elsif guess != @solution
         feedback_message(guess, @solution, guess_count)
-        end
       end
     end
   end
+end
 
-
-  def game_over
-    game_over_message
-    guess = gets.chomp.downcase
-    if guess == 'p'
-      play_again
-    elsif guess == 'q'
-      quit
-    end
+def game_over
+  game_over_message
+  guess = gets.chomp.downcase
+  if guess == 'p'
+    play_again
+  elsif guess == 'q'
+    quit
   end
+end
 end
