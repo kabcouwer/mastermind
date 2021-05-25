@@ -3,7 +3,8 @@ require './lib/turn'
 class Mastermind
   include Message
 
-  attr_reader :turn
+  attr_reader :turn,
+              :solution
 
   def initialize
     @turn = Turn.new
@@ -73,7 +74,6 @@ class Mastermind
       end
     end
   end
-end
 
   def game_over
     game_over_message
