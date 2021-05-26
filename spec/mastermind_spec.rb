@@ -31,8 +31,17 @@ RSpec.describe Mastermind do
     allow(@mastermind).to receive(:gets).and_return('q')
 
     expect(@mastermind.player_choice).to eq(@mastermind.quit)
-  end 
-end 
+  end
+
+  it 'can perform timer_math' do
+    start_time = 38
+    won_time = 52
+    guess = 'rrbb'
+    guess_count = 4
+
+    expect(@mastermind.timer_math(start_time, won_time, guess, guess_count)).to eq("Congratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over #{time_min} minutes, #{time_sec} seconds.")
+  end
+end
 
   # xit 'can initialize time' do
   #   time_now = Time.now

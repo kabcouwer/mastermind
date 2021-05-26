@@ -33,6 +33,12 @@ class Mastermind
     end
   end
 
+  def timer_math(start_time, won_time, guess, guess_count)
+    game_time_sec = (won_time - start_time) % 60
+    game_time_min = (won_time - start_time) / 60
+    game_won_message(guess, guess_count, game_time_min.floor, game_time_sec.round)
+  end
+
   def run_game
     start_time = Time.now
     guess_count = 0
@@ -61,9 +67,7 @@ class Mastermind
       elsif
         guess.split('') == @solution
         won_time = Time.now
-        game_time_sec = (won_time.sec - start_time.sec) % 60
-        game_time_min = (won_time - start_time) / 60
-        game_won_message(guess, guess_count, game_time_min.floor, game_time_sec)
+        timer_math(start_time, won_time, guess,guess_count)
         game_over
         break
       elsif guess_count == 10
