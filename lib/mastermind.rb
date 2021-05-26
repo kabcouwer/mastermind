@@ -1,5 +1,3 @@
-require './lib/turn'
-
 class Mastermind
   include Message
 
@@ -58,34 +56,34 @@ class Mastermind
       elsif guess.length > 4
         input_too_long
         guess_count -= 1
-      elsif x = guess.split('').find_all do |character|
-        character == 'r' || character == 'g' || character == 'b' || character == 'y'
-      end
-      if x.length != 4
-        invalid_character_input_message
-        guess_count -= 1
-      elsif
-        guess.split('') == @solution
-        won_time = Time.now
-        timer_math(start_time, won_time, guess,guess_count)
-        game_over
-        break
-      elsif guess_count == 10
-        game_over
-      elsif guess != @solution
-        feedback_message(guess, @solution, guess_count)
+      else
+        guess_array = guess.split('').find_all do |character|
+          character == 'r' || character == 'g' || character == 'b' || character == 'y'
+        end
+        if guess_array.length != 4
+          invalid_character_input_message
+          guess_count -= 1
+        elsif guess.split('') == @solution
+          won_time = Time.now
+          timer_math(start_time, won_time, guess,guess_count)
+          game_over
+          break
+        elsif guess_count == 10
+          game_over
+        elsif guess != @solution
+          feedback_message(guess, @solution, guess_count)
+        end
       end
     end
   end
-end
 
-def game_over
-  game_over_message
-  guess = gets.chomp.downcase
-  if guess == 'p'
-    play_again
-  elsif guess == 'q'
-    quit
+  def game_over
+    game_over_message
+    guess = gets.chomp.downcase
+    if guess == 'p'
+      play_again
+    elsif guess == 'q'
+      quit
+    end
   end
-end
 end
