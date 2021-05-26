@@ -31,14 +31,14 @@ RSpec.describe Mastermind do
     allow(@mastermind).to receive(:gets).and_return('q')
 
     expect(@mastermind.player_choice).to eq(@mastermind.quit)
-  end 
-end 
+  end
 
-  # xit 'can initialize time' do
-  #   time_now = Time.now
-  #   allow(@mastermind).to receive(:gets).and_return('rgby')
-  #
-  #   allow(Time).to receive(:now).and_return(time_now)
-  #
-  #   expect(@mastermind.run_game).to eq(time_now)
-  # end
+  it 'can perform timer_math' do
+    start_time = 38
+    won_time = 102
+    guess = 'rrbb'
+    guess_count = 4
+
+    expect(@mastermind.timer_math(start_time, won_time, guess, guess_count)).to eq("\e[32;1mCongratulations! You guessed the sequence #{guess.upcase} in #{guess_count} guesses over 1 minutes, 4 seconds.\n\n\e[0m")
+  end
+end

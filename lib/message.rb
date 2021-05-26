@@ -13,7 +13,7 @@ require 'pastel'
     end
 
     def start_message
-      puts "I have generated a beginner sequence with four positions made up of: (" + "r".red + ")ed, (" + "g".green + ")reen, (" + "b".blue + ")lue, and (" + "y".yellow + ")ellow. Use (q)uit at any time to end the game.\r\nWhat's your guess?"
+      puts "I have generated a beginner sequence with four positions made up of: (" + "r".red + ")ed, (" + "g".green + ")reen, (" + "b".blue + ")lue, and (" + "y".yellow + ")ellow. Use (q)uit at any time to end the game.\n\nWhat's your guess?"
     end
 
     def instructions
@@ -33,11 +33,11 @@ require 'pastel'
     end
 
     def invalid_character_input_message
-      puts "Invalid Input. Your guess does not have the correct characters.\r\nTry (" + "r".red + ")ed, (" + "g".green + ")reen, (" + "b".blue + ")lue, and (" + "y".yellow + ")ellow. For example: rrgb"
+      puts "Invalid Input. Your guess does not have the correct characters.\n\nTry (" + "r".red + ")ed, (" + "g".green + ")reen, (" + "b".blue + ")lue, and (" + "y".yellow + ")ellow. For example: rrgb"
     end
 
     def feedback_message(guess, solution, guess_count)
-      puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct position(s).\r\nYou've taken #{guess_count} guess(es). What is your next guess?"
+      puts "#{guess.upcase} has #{@turn.correct_colors(guess, solution)} of the correct elements with #{@turn.correct_positions(guess, solution)} in the correct position(s).\n\nYou've taken #{guess_count} guess(es). What is your next guess?"
     end
 
     def cheat(solution)

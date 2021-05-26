@@ -1,5 +1,3 @@
-require './lib/mastermind'
-
 class Turn
 
   def correct_colors(guess, solution)
@@ -18,7 +16,7 @@ class Turn
     array_guess = guess.split('')
     array_guess == solution
   end
-
+  
   def correct_positions(guess, solution)
     correct_positions = 0
     array_guess = guess.split('')
