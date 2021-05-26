@@ -16,7 +16,5 @@ RSpec.describe CreateCode do
   it "can create a randomized secret code which is an array" do
     expect(@code.solution.length).to eq(4)
     expect(@code.solution).to be_a(Array)
-
   end
-
 end
